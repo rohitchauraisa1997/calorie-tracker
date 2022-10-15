@@ -13,3 +13,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# mongofiles
+/server/mongo/db
+# vscode settings
+settings.json
