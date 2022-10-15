@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:5.0.10
+    container_name: calorie-mongo
+    ports:
+      - 27020:27017
+    volumes:
+      - ./mongo/db:/data/db
+      - ./mongo/users.js:/docker-entrypoint-initdb.d/users.js:ro
+      - ./mongo/mongod.conf:/etc/mongod.conf
+    environment:
+      - MONGO_DATA_DIR= /data/db
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_DATABASE=calorie-tracker-db
