@@ -13,7 +13,11 @@ import (
 var Client *mongo.Client = DBinstance()
 
 func DBinstance() *mongo.Client {
-	MongoDb := "mongodb://calorie-user:calorie123@localhost:27020/?authSource=calorie-tracker-db"
+	// calorie123@mongodb:27017/ the moongodb here refers to the service created by docker-compose.
+	// and we are connecting to 27017 port of the mongodb service.
+	// we cant use localhost here because all 3 services inside docker-compose are running in their
+	// own serperate containers and each of them recognizes itself as the localhost.
+	MongoDb := "mongodb://calorie-user:calorie123@mongodb:27017/?authSource=calorie-tracker-db"
 
 	client, err := mongo.NewClient(options.Client().ApplyURI(MongoDb))
 	if err != nil {
