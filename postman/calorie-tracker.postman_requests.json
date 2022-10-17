@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "9e146b8e-df64-4c1c-a44e-baba66cf7ecd",
+		"name": "Calorie-Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19101287"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllEntries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/entries"
+			},
+			"response": []
+		},
+		{
+			"name": "GetEntryById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/entry/?id={{testId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"entry",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{testId}}"
+						},
+						{
+							"key": "id",
+							"value": "6347a4af3a680e3213498504",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEntriesByIngredients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/ingredient?ingredient=paneer, chole, kulche, matar, masala, salt, green chilli, achaar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"ingredient"
+					],
+					"query": [
+						{
+							"key": "ingredient",
+							"value": "paneer, chole, kulche, matar, masala, salt, green chilli, achaar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEntry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var headerValue = pm.response.json()[\"id\"];",
+							"console.log(headerValue)",
+							"pm.environment.set(\"testId\", headerValue);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dish\":\"chole kulche\",\n    \"ingredients\":\"chole, kulche, matar, masala\",\n    \"proteins\":10,\n    \"carbs\":150,\n    \"fat\":10,\n    \"calories\":380,\n    \"size\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/entry/add"
+			},
+			"response": []
+		},
+		{
+			"name": "AddEntry Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dish\":\"matar paneer\",\n    \"ingredients\":\"matar, paneer, tomato, onion, ginger-garlic paste\",\n    \"proteins\":10,\n    \"carbs\":150,\n    \"fat\":10,\n    \"calories\":380,\n    \"size\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/entry/add"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEntry",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dish\":\"panner chole kulche\",\n    \"ingredients\":\"paneer, chole, kulche, matar, masala\",\n    \"proteins\":10,\n    \"carbs\":150,\n    \"fat\":10,\n    \"calories\":420,\n    \"size\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/entry/update?id={{testId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"entry",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{testId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateIngredient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ingredients\":\"paneer, chole, kulche, matar, masala, salt, green chilli, achaar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/ingredient/update?id={{testId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"ingredient",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{testId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SoftDeleteEntry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/entry/softdelete/?id={{testId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"entry",
+						"softdelete",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{testId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEntry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/entry/delete?id={{testId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"entry",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{testId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
