@@ -96,7 +96,7 @@ const Entries =() =>{
 
     function changeIngredientForEntry(){
         changeIngredient.change = false
-        var url = "http://localhost:8001/ingredient/update?id=" + changeIngredient.id
+        var url = "http://localhost:3001/ingredient/update?id=" + changeIngredient.id
         axios.put(url, {
             "ingredients": newIngredientName
         }).then(response => {
@@ -109,7 +109,7 @@ const Entries =() =>{
 
     function changeSingleEntry(){
         changeEntry.change = false;
-        var url = "http://localhost:8001/entry/update?id=" + changeEntry.id
+        var url = "http://localhost:3001/entry/update?id=" + changeEntry.id
         axios.put(url, newEntry)
         .then(response =>{
             if(response.status == 200){
@@ -120,7 +120,7 @@ const Entries =() =>{
 
     function addSingleEntry(){
         setAddNewEntry(false)
-        var url = "http://localhost:8001/entry/add"
+        var url = "http://localhost:3001/entry/add"
         axios.post(url, {
             "ingredients":newEntry.ingredients,
             "dish": newEntry.dish,
@@ -134,7 +134,7 @@ const Entries =() =>{
     }
     
     function deleteSingleEntry(id){
-        var url = "http://localhost:8001/entry/delete?id=" + id
+        var url = "http://localhost:3001/entry/delete?id=" + id
         axios.delete(url, {
     
         }).then(response => {
@@ -145,7 +145,7 @@ const Entries =() =>{
     }
     
     function getAllEntries(){
-        var url = "http://localhost:8001/entries"
+        var url = "http://localhost:3001/entries"
         axios.get(url, {
             reponseType: 'json'
         }).then(response => {
