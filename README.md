@@ -5,6 +5,12 @@
 ```
 git clone https://github.com/rohitchauraisa1997/calorie-tracker.git
 ```
+
+### Move to the cloned directory.
+```
+cd calorie-tracker
+```
+
 ### Docker compose to bring the calorie tracker app up
 ```
 docker compose up -d
