@@ -19,6 +19,10 @@ import (
 var validate = validator.New()
 var entryCollection *mongo.Collection = dbconn.OpenCollection(dbconn.Client, "calories")
 
+func Ping(c *gin.Context) {
+	c.JSON(http.StatusOK, "ping test for calorie tracker!!")
+}
+
 func AddEntry(c *gin.Context) {
 	var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 	var entry models.Entry
