@@ -7,10 +7,5 @@ ports:
     onOpen: open-browser
 
 tasks:
-  - name: Starting the app with docker compose
-    command: docker compose up --build
-
-github:
-  prebuilds:
-    # disabling prebuild
-    master: false
+  - name: start app with docker compose
+    command: docker-compose up --build
