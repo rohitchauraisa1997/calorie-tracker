@@ -7,8 +7,8 @@ ports:
     onOpen: open-browser
 
 tasks:
-  - init: "docker-compose up --build"
-    command: docker-compose up --build
+  - init: "docker compose up --build"
+    command: docker compose up --build
 
 github:
   prebuilds:
