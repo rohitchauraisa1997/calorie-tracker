@@ -1,4 +1,11 @@
 # Calorie-tracker app using react as frontend and gin as the backend server.
+
+## To Setup the Calorie Tracker in gitpod.
+You can add gitpod extension to your browser or directly create a workspace in gitpod by accessing
+```
+https://gitpod.io#github.com/rohitchauraisa1997/calorie-tracker
+```    
+
 ## To Setup the Calorie Tracker in your local environment.
 
 ### Clone the repository to your local.
