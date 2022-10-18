@@ -10,7 +10,7 @@ tasks:
   - init: "docker compose up --build"
     command: docker compose up --build
 
-github:
-  prebuilds:
-    # disabling prebuild
-    master: false
+# github:
+#   prebuilds:
+#     # disabling prebuild
+#     master: false
