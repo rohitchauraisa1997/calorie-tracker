@@ -8,6 +8,8 @@ https://gitpod.io#github.com/rohitchauraisa1997/calorie-tracker
 
 ## To Setup the Calorie Tracker in your local environment.
 
+https://user-images.githubusercontent.com/67869038/213902262-9dfe5331-a401-484c-af75-f0cb0cbba595.mp4
+
 ### Clone the repository to your local.
 ```
 git clone https://github.com/rohitchauraisa1997/calorie-tracker.git
@@ -43,3 +45,5 @@ docker compose up -d
 ```
  docker compose exec frontend sh
 ```
+
+
