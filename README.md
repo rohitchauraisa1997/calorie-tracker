@@ -1,5 +1,8 @@
 # Calorie-tracker app using react as frontend and gin as the backend server.
 
+Project referred from:- 
+https://www.youtube.com/watch?v=75EpH4YF9Zc&list=PL5dTjWUk_cPbJkoB95DGTA-h_XEI6Lko9&ab_channel=AkhilSharma
+
 ## To Setup the Calorie Tracker in gitpod.
 You can add gitpod extension to your browser or directly create a workspace in gitpod by accessing
 ```
